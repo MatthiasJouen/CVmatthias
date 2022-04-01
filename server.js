@@ -23,6 +23,8 @@ var server = app.listen(process.env.PORT || 8080, function() {
     console.log("App now running on port", port);
 });
 
+app.get("/*", (req, res) => res.sendFile(path.join(__dirname, "public")));
+app.get("*", (req, res) => res.redirect("/"));
 /*  "/api/status"
  *   GET: Get server status
  *   PS: it's just an example, not mandatory
