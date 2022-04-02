@@ -14,8 +14,12 @@ app.use(bodyParser.json());
 // Create link to Angular build directory
 // The `ng build` command will save the result
 // under the `dist` folder.
-var distDir = __dirname + "/dist/";
+var distDir = __dirname + "/dist/cvmatthias/";
 app.use(express.static(distDir));
+
+app.get("/*", function(req, res) {
+    res.sendFile(path.join(_dirname, "dist/cvmatthias/index.html"));
+});
 
 // Init the server
 var server = app.listen(process.env.PORT || 8080, function() {
@@ -23,12 +27,6 @@ var server = app.listen(process.env.PORT || 8080, function() {
     console.log("App now running on port", port);
 });
 
-/*
- Route de base
- */
-app.get("/", function(req, res) {
-    res.sendFile(distDir + "index.html");
-});
 /*  "/api/status"
  *   GET: Get server status
  *   PS: it's just an example, not mandatory
