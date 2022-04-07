@@ -1,13 +1,18 @@
 body {
-    //font
+    //font    
     font-family: 'Roboto', sans-serif;
     //background: linear-gradient(-45deg, #41295a, #2F0743);
-    background: linear-gradient(-45deg, #3a6186, #2c3e50);
+    background: #051622;
     background-size: 400% 400%;
     animation: gradient 30s ease infinite;
     /* Full height */
     height: 100%;
     text-align: center;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 @keyframes gradient {

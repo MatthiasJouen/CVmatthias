@@ -6,11 +6,13 @@ import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
 import { AppComponent } from './app.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
+import { CvTimelineComponent } from './cv-timeline/cv-timeline.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UnderConstructionComponent
+    UnderConstructionComponent,
+    CvTimelineComponent
   ],
   imports: [
     BrowserModule,
