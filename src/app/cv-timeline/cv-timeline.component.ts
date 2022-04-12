@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TimelineCardService } from '../services/timeline-card.service';
 import { TimelineCard } from '../models/timeline-card.model';
 import * as $ from 'jquery';
+import { faMapLocationDot, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -11,7 +12,8 @@ import * as $ from 'jquery';
   styleUrls: ['./cv-timeline.component.scss']
 })
 export class CvTimelineComponent implements OnInit {
-
+  faMapLocationDot = faMapLocationDot;
+  faArrowUpRightFromSquare = faArrowUpRightFromSquare;
   timelineCards! : TimelineCard[]; 
   
   constructor(private timeLineService: TimelineCardService ) { 

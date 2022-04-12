@@ -1,11 +1,17 @@
 $main-color:#051622;
 $second-color :#1BA098;
 $third-color:#DEB992;
+$date-font-size :1.6rem;
 //  –––––––––––––––––––––TIMELINE––––––––––––––––––––––––––––– 
+.timeline {
+    text-align: center;
+}
+
 .timeline ul {
     padding: 50px 0;
 }
 
+//ligne verticale
 .timeline ul li {
     list-style-type: none;
     color: $main-color;
@@ -16,11 +22,12 @@ $third-color:#DEB992;
     background: $second-color;
 }
 
+//cercles
 .timeline ul li::after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 30%;
     transform: translateX(-50%);
     width: 30px;
     height: 30px;
@@ -32,52 +39,66 @@ $third-color:#DEB992;
 .timeline ul li div {
     position: relative;
     bottom: 0;
-    width: 500px;
+    width: 35vw;
     padding: 15px;
     background: transparentize($second-color, 0.2);
 }
 
 //zone de droite
-.timeline ul li:nth-child(odd) div {
-    left: 50px;
-    border-radius: 10px 10px 10px 0px;
+.timeline ul li .study {
+    left: 45px;
+    border-radius: 10px 10px 10px 10px;
     box-shadow: 5px 5px 2px 1px $third-color;
 }
 
-.timeline ul li:nth-child(odd) div::before {
+.timeline ul li .study::before {
     left: -15px;
     border-width: 8px 16px 8px 0;
     border-color: transparent $second-color transparent transparent;
 }
 
 //zone de gauche
-.timeline ul li:nth-child(even) div {
-    left: -575px;
-    border-radius: 10px 10px 0px 10px;
+.timeline ul li .work {
+    left: calc((35vw + 75px)*-1);
+    border-radius: 10px 10px 10px 10px;
     box-shadow: -5px 5px 2px 1px $third-color;
 }
 
-.timeline ul li:nth-child(even) div::before {
+.timeline ul li .work::before {
     right: -15px;
     border-width: 8px 0 8px 16px;
     border-color: transparent transparent transparent $second-color;
 }
 
-time {
-    display: block;
-    font-size: 2.6rem;
+.title {
+    display: inline-block;
+    font-size: $date-font-size;
     font-weight: bold;
     text-shadow: $main-color 2px 2px 0px;
+    letter-spacing: .1rem;
+    margin: -5px;
+    margin-right: 5px;
     color: $third-color;
 }
 
 .date {
-    display: block;
-    font-size: 1.6rem;
+    display: inline-block;
+    font-size: $date-font-size;
     font-weight: bold;
+    letter-spacing: .2rem;
+    text-shadow: $main-color 2px 2px 0px;
     color: $third-color;
-    text-shadow: $main-color 1px 1px 0px;
-    margin-top: -5px;
+    margin-top: 2px;
+}
+
+.date a {
+    color: $third-color;
+    text-decoration: none;
+}
+
+.date a:hover {
+    color: $main-color;
+    font-size: calc($date-font-size + ($date-font-size * 0.5));
 }
 
 .content {
@@ -85,7 +106,7 @@ time {
     font-size: 1.0rem;
     font-weight: bold;
     color: $main-color;
-    margin-top: -3px;
+    margin-top: -5px;
 }
 
 //  –––––––––––––––––––EFFECTS––––––––––––––––––––––––––––––– 
@@ -103,11 +124,11 @@ time {
     transition: all 0.5s ease-in-out;
 }
 
-.timeline ul li:nth-child(odd) div {
+.timeline ul li .study {
     transform: translate3d(200px, 0, 0);
 }
 
-.timeline ul li:nth-child(even) div {
+.timeline ul li .work {
     transform: translate3d(-200px, 0, 0);
 }
 
@@ -118,28 +139,64 @@ time {
 }
 
 // ––––––––––––––––––––––GENERAL MEDIA QUERIES––––––––––––––––––––––––––––
-@media screen and (max-width: 900px) {
-    .timeline ul li div {
-        width: 300px;
-    }
-    .timeline ul li:nth-child(even) div {
-        left: -370px;
-    }
-}
+@media screen and (min-width: 1001px) {}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
     .timeline ul li {
-        margin-left: 20px;
+        margin-left: 10px;
+        position: relative;
     }
     .timeline ul li div {
-        width: calc(100vw - 91px);
+        width: 75vw;
     }
-    .timeline ul li:nth-child(even) div {
-        left: 45px;
+    //zone impaire
+    .timeline ul li .work {
+        left: 25px;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 5px 5px 2px 1px $third-color;
     }
-    .timeline ul li:nth-child(even) div::before {
+    .timeline ul li .work::before {
         left: -15px;
         border-width: 8px 16px 8px 0;
         border-color: transparent $second-color transparent transparent;
+    }
+    .timeline ul li .study {
+        left: 25px;
+    }
+    $date-font-size:1.1rem;
+    .title {
+        font-size: $date-font-size;
+    }
+    .date {
+        font-size: $date-font-size;
+    }
+    .date a:hover {
+        font-size: calc($date-font-size + ($date-font-size * 0.5));
+    }
+    .content {
+        font-size: 0.8rem;
+    }
+    .timeline ul li .study .work {
+        transform: translate3d(50px, 0, 0);
+    }
+    //  –––––––––––––––––––EFFECTS––––––––––––––––––––––––––––––– 
+    .timeline ul li::after {
+        transition: background 0.5s ease-in-out;
+    }
+    .timeline ul li.in-view::after {
+        background: $second-color;
+    }
+    .timeline ul li div {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+    }
+    .timeline ul li div {
+        transform: translate3d(200px, 0, 0);
+    }
+    .timeline ul li.in-view div {
+        transform: none;
+        visibility: visible;
+        opacity: 1;
     }
 }

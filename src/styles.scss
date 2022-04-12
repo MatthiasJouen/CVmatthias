@@ -1,3 +1,6 @@
+$main-color:#051622;
+$second-color :#1BA098;
+$third-color:#DEB992;
 body {
     //font    
     font-family: 'Roboto', sans-serif;
@@ -6,8 +9,7 @@ body {
     background-size: 400% 400%;
     animation: gradient 30s ease infinite;
     /* Full height */
-    height: 100%;
-    text-align: center;
+    height: 100vh;
     overflow-x: hidden;
 }
 
@@ -15,14 +17,6 @@ html {
     scroll-behavior: smooth;
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+h1 {
+    color: $second-color;
 }
