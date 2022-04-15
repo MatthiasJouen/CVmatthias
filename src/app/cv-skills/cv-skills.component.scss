@@ -1,0 +1,48 @@
+$main-color:#051622;
+$second-color :#1BA098;
+$third-color:#DEB992;
+.skills {
+    height: 500px;
+    background-color: $second-color;
+}
+
+h1 {
+    color: $main-color;
+}
+
+
+/*
+* -------------------------------------------------------------------------------------------------------------
+* -------------------------------------- TRANSITION SKILLS PROJECTS -------------------------------------------
+* -------------------------------------------------------------------------------------------------------------
+*/
+
+.transition-skills-projects,
+.transition-skills-projects:after {
+    height: 25px;
+    width: 100%;
+}
+
+@media (min-width: 520px) {
+    .transition-skills-projects,
+    .transition-skills-projects:after {
+        height: 55px;
+    }
+}
+
+@media (min-width: 900px) {
+    .transition-skills-projects,
+    .transition-skills-projects:after {
+        height: 75px;
+    }
+}
+
+.transition-skills-projects {
+    background-color: $main-color;
+}
+
+.transition-skills-projects:after {
+    background-color: $second-color;
+    -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}

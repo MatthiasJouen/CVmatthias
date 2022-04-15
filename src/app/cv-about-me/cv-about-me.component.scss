@@ -1,3 +1,37 @@
 $main-color:#051622;
 $second-color :#1BA098;
 $third-color:#DEB992;
+.about-me {
+    height: 500px;
+    background-color: $second-color;
+}
+
+.transition-about-me-timeline,
+.transition-about-me-timeline:after {
+    height: 25px;
+    width: 100vw;
+}
+
+@media (min-width: 520px) {
+    .transition-about-me-timeline,
+    .transition-about-me-timeline:after {
+        height: 90px;
+    }
+}
+
+@media (min-width: 900px) {
+    .transition-about-me-timeline,
+    .transition-about-me-timeline:after {
+        height: 160px;
+    }
+}
+
+.transition-about-me-timeline {
+    background-color: $main-color;
+}
+
+.transition-about-me-timeline:after {
+    background-color: $second-color;
+    -webkit-clip-path: polygon(100% 100%, 100% 0, 0 0);
+    clip-path: polygon(100% 100%, 100% 0, 0 0);
+}

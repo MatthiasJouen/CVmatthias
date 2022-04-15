@@ -1,0 +1,63 @@
+$main-color:#051622;
+$second-color :#1BA098;
+$third-color:#DEB992;
+#mainNav {
+    top: 0;
+    margin-left: 0;
+}
+
+.navigation {
+    z-index: 1;
+    position: fixed;
+    background-color: $second-color;
+    color: $third-color;
+    width: 100%;
+    &__link {
+        color: $main-color;
+        text-decoration: none;
+        display: inline-block;
+        padding: 1em;
+        font-weight: 400;
+        &.active {
+            color: $third-color;
+            background-color: rgba($main-color, 0.1);
+        }
+    }
+}
+
+.navigation__link:hover {
+    background-color: rgba($main-color, 0.1);
+}
+
+.navigation__link p {
+    margin: 0;
+}
+
+.navigation__link fa-icon {
+    display: none;
+}
+
+
+/*
+* -------------------------------------------------------------------------------------------------------------
+* -------------------------------------- VERSION MOBILE MENU --------------------------------------------------
+* -------------------------------------------------------------------------------------------------------------
+*/
+
+@media (max-width: 800px) {
+    .navigation__link p {
+        display: none;
+    }
+    .navigation a fa-icon {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        font-size: 6vw;
+    }
+    #mainNav {
+        text-align: center;
+    }
+    .navigation a+a {
+        margin-left: 5vw;
+    }
+}

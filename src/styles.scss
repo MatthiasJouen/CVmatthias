@@ -1,22 +1,39 @@
 $main-color:#051622;
 $second-color :#1BA098;
 $third-color:#DEB992;
+html {
+    margin: 0!important;
+    scroll-behavior: smooth;
+    padding: 0!important;
+    background-color: $main-color;
+}
+
 body {
     //font    
     font-family: 'Roboto', sans-serif;
-    //background: linear-gradient(-45deg, #41295a, #2F0743);
-    background: #051622;
-    background-size: 400% 400%;
+    background: $main-color;
     animation: gradient 30s ease infinite;
     /* Full height */
-    height: 100vh;
     overflow-x: hidden;
-}
-
-html {
-    scroll-behavior: smooth;
+    margin: 0!important;
 }
 
 h1 {
     color: $second-color;
+    margin-top: 0;
+    text-align: center;
+}
+
+//transitions entre les parties (commun à tous)
+.angle {
+    position: relative;
+}
+
+.angle:after {
+    content: '';
+    position: absolute;
+}
+
+section {
+    width: 100%!important;
 }

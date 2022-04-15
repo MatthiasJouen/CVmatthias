@@ -1,3 +1,44 @@
 $main-color:#051622;
 $second-color :#1BA098;
 $third-color:#DEB992;
+.projects {
+    height: 500px;
+    background-color: $main-color;
+}
+
+
+/*
+* -------------------------------------------------------------------------------------------------------------
+* -------------------------------------- TRANSITION PROJECTS HOBBIES ------------------------------------------
+* -------------------------------------------------------------------------------------------------------------
+*/
+
+.transition-projects-hobbies,
+.transition-projects-hobbies:after {
+    height: 35px;
+    width: 100%;
+}
+
+@media (min-width: 520px) {
+    .transition-projects-hobbies,
+    .transition-projects-hobbies:after {
+        height: 55px;
+    }
+}
+
+@media (min-width: 900px) {
+    .transition-projects-hobbies,
+    .transition-projects-hobbies:after {
+        height: 75px;
+    }
+}
+
+.transition-projects-hobbies {
+    background-color: $second-color;
+}
+
+.transition-projects-hobbies:after {
+    background-color: $main-color;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 77% 100%, 12% 42%, 0 60%);
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 77% 100%, 12% 42%, 0 60%);
+}

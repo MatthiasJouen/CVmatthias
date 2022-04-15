@@ -2,13 +2,29 @@ $main-color:#051622;
 $second-color :#1BA098;
 $third-color:#DEB992;
 $date-font-size :1.6rem;
-//  –––––––––––––––––––––TIMELINE––––––––––––––––––––––––––––– 
+
+/*
+* -------------------------------------------------------------------------------------------------------------
+* ----------------------------------------- STYLE GLOBAL PAGE -------------------------------------------------
+* -------------------------------------------------------------------------------------------------------------
+*/
+
 .timeline {
     text-align: center;
+    background-color: $main-color; //background-color: #051640;
+    width: 100vw;
 }
+
+
+/*
+* -------------------------------------------------------------------------------------------------------------
+* ------------------------------------------- TIMELINE UL LI --------------------------------------------------
+* -------------------------------------------------------------------------------------------------------------
+*/
 
 .timeline ul {
     padding: 50px 0;
+    margin-bottom: 0;
 }
 
 //ligne verticale
@@ -141,7 +157,17 @@ $date-font-size :1.6rem;
 // ––––––––––––––––––––––GENERAL MEDIA QUERIES––––––––––––––––––––––––––––
 @media screen and (min-width: 1001px) {}
 
+
+/*
+* -------------------------------------------------------------------------------------------------------------
+* -------------------------------------- VERSION MOBILE TIMELINE ----------------------------------------------
+* -------------------------------------------------------------------------------------------------------------
+*/
+
 @media screen and (max-width: 1000px) {
+    .timeline ul {
+        margin-left: 5px;
+    }
     .timeline ul li {
         margin-left: 10px;
         position: relative;
@@ -176,27 +202,48 @@ $date-font-size :1.6rem;
     .content {
         font-size: 0.8rem;
     }
-    .timeline ul li .study .work {
+    .timeline ul li .work {
+        transform: translate3d(50px, 0, 0);
+    }
+    .timeline ul li .study {
         transform: translate3d(50px, 0, 0);
     }
     //  –––––––––––––––––––EFFECTS––––––––––––––––––––––––––––––– 
-    .timeline ul li::after {
-        transition: background 0.5s ease-in-out;
+}
+
+
+/*
+* -------------------------------------------------------------------------------------------------------------
+* -------------------------------------- TRANSITION TIMELINE SKILLS -------------------------------------------
+* -------------------------------------------------------------------------------------------------------------
+*/
+
+.transition-timeline-skills,
+.transition-timeline-skills:after {
+    height: 25px;
+    width: 100%;
+}
+
+@media (min-width: 520px) {
+    .transition-timeline-skills,
+    .transition-timeline-skills:after {
+        height: 55px;
     }
-    .timeline ul li.in-view::after {
-        background: $second-color;
+}
+
+@media (min-width: 900px) {
+    .transition-timeline-skills,
+    .transition-timeline-skills:after {
+        height: 75px;
     }
-    .timeline ul li div {
-        visibility: hidden;
-        opacity: 0;
-        transition: all 0.5s ease-in-out;
-    }
-    .timeline ul li div {
-        transform: translate3d(200px, 0, 0);
-    }
-    .timeline ul li.in-view div {
-        transform: none;
-        visibility: visible;
-        opacity: 1;
-    }
+}
+
+.transition-timeline-skills {
+    background-color: $second-color;
+}
+
+.transition-timeline-skills:after {
+    background-color: $main-color;
+    -webkit-clip-path: polygon(0 0, 100% 0, 25% 100%);
+    clip-path: polygon(0 0, 100% 0, 25% 100%);
 }
