@@ -10,6 +10,7 @@ export class CvAboutMeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

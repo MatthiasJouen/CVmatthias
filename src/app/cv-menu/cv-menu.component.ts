@@ -19,31 +19,8 @@ export class CvMenuComponent implements OnInit {
 
   ngOnInit(): void {
     
-    /*
-    var active:boolean = false;
-    const el = document.getElementById('mainNav') as HTMLElement;
-    //si la souris passe sur le menu on l'affiche
-    const navMenuHeight:any = $('#mainNav').height();
-    
-    document.addEventListener('mousemove', logKey);
-    function logKey(e:any) {
-      if(navMenuHeight >= e.clientY){
-        console.log("on hover");
-        active = true
-        $('#mainNav').fadeIn(500);
-      }
-      else{
-        console.log("on hover out");
-        $('#mainNav').fadeOut(500);
-        active = false;
-      }
-    }*/
-      
-    
-    
-
     $(document).ready(function() {
-      $('a[href*="#"]').bind('click', function(e) {
+      $('a[href*="#"]:not([href="#"])').bind('click', function(e) {
           e.preventDefault(); // prevent hard jump, the default behavior
   
           var target:any = $(this).attr("href"); // Set the target as variable

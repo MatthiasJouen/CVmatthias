@@ -37,3 +37,36 @@ h1 {
 section {
     width: 100%!important;
 }
+
+//back to top
+.back-to-top {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    cursor: pointer;
+    padding: 0.6rem 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: $third-color;
+    box-shadow: 0 5px 15px $main-color;
+    text-indent: -9999px;
+    display: none;
+    border-radius: 1.5rem;
+    z-index: 9;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHRpdGxlPmljb25fYXJyb3dfdXA8L3RpdGxlPjxwYXRoIGQ9Ik0xOC4zNSwxMC42NWwtNi02YS4zNi4zNiwwLDAsMC0uMTYtLjExLjUuNSwwLDAsMC0uMzgsMCwuMzYuMzYsMCwwLDAtLjE2LjExbC02LDZhLjQ4LjQ4LDAsMCwwLDAsLjcuNDguNDgsMCwwLDAsLjcsMEwxMS41LDYuMjFWMTlhLjUuNSwwLDAsMCwxLDBWNi4yMWw1LjE1LDUuMTRhLjQ4LjQ4LDAsMCwwLC43LDBBLjQ4LjQ4LDAsMCwwLDE4LjM1LDEwLjY1WiIvPjwvc3ZnPg==);
+    background-size: 2rem 2rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .3s background-color ease;
+}
+
+.back-to-top:hover {
+    background-color: $second-color;
+    background-size: +1.2rem +1.2rem;
+}
+
+@media (max-width: 800px) {
+    .back-to-top {
+        visibility: hidden;
+    }
+}

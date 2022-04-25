@@ -6,6 +6,73 @@ $third-color:#DEB992;
     background-color: $second-color;
 }
 
+.hobbies p {
+    margin: 0;
+    padding-top: 10px;
+}
+
 h1 {
     color: $main-color;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.carrousel ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 20px 10px;
+    padding: 0;
+}
+
+.hero .carrousel li {
+    overflow: hidden;
+    /* divide by number of images */
+    width: calc(100% /3);
+    border-radius: 30px;
+    height: 400px;
+    /* time to set the rectangle on size */
+    transition: width 1.0s ease;
+}
+
+.hero .carrousel li img {
+    width: 100%;
+    /* To keep all images on same dimensions */
+    object-fit: cover;
+    height: 100%;
+    /* time to fit the image on the rectangle */
+    transition: width .6s ease;
+}
+
+.hero .carrousel li:hover {
+    width: 80%;
+    /*   height: 400px; */
+}
+
+.hero .carrousel li:hover video {
+    width: 100%;
+}
+
+.hero .carrousel li video {
+    width: 100%;
+    /* To keep all images on same dimensions */
+    object-fit: cover;
+    height: 100%;
+    /* time to fit the image on the rectangle */
+    transition: width .6s ease;
+}
+
+.hero .carrousel li:hover video {
+    width: 100%;
+}
+
+
+/* Hide Play button + controls on iOS */
+
+video::-webkit-media-controls {
+    display: none !important;
 }

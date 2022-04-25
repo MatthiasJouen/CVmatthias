@@ -1,0 +1,15 @@
+$main-color:#051622;
+$second-color :#1BA098;
+$third-color:#DEB992;
+.footer {
+    background-color: $second-color;
+    position: relative;
+    text-align: center;
+    color: $third-color;
+}
+
+.footer p {
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 1rem 0;
+}
