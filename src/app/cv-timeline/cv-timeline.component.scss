@@ -14,24 +14,23 @@
         width: 100vw;
     }
     
-    .description-timeline p {
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: 1.2rem;
-        display: inline-block;
-        vertical-align: top;
+    .timeline .top-work {
+        width: 35vw;
+        margin: 0 auto;
+        margin-right: calc(50% + 72px);
+        right: 45px;
+        height: 0;
+        color: $second-color;
+        font-size: $date-font-size;
     }
     
-    .description-timeline .work-title {
-        font-weight: bold;
+    .timeline .top-study {
+        width: 35vw;
+        margin: 0 auto;
+        margin-left: calc(50% + 72px);
+        right: 45px;
         color: $second-color;
-        text-align: left;
-        //padding-left: calc(35vw/2 + 15px);
-    }
-    
-    .description-timeline .study-title {
-        font-weight: bold;
-        color: $second-color;
+        font-size: $date-font-size;
     }
     /*
 * -------------------------------------------------------------------------------------------------------------
@@ -40,7 +39,7 @@
 */
     
     .timeline ul {
-        padding: 50px 0;
+        padding: 30px 0;
         margin-bottom: 0;
     }
     
@@ -127,6 +126,7 @@
     .timeline ul li div .date a {
         color: $third-color;
         text-decoration: none;
+        transition: all .5s ease;
     }
     
     .timeline ul li div .date a:hover {
@@ -194,12 +194,13 @@
         .timeline ul li .work {
             left: 25px;
             border-radius: 10px 10px 10px 10px;
-            box-shadow: 5px 5px 2px 1px $third-color;
+            box-shadow: 5px 5px 2px 1px $second-color;
+            background: transparentize($third-color, 0.2);
         }
         .timeline ul li .work::before {
             left: -15px;
             border-width: 8px 16px 8px 0;
-            border-color: transparent $second-color transparent transparent;
+            border-color: transparent $third-color transparent transparent;
         }
         .timeline ul li .study {
             left: 25px;
@@ -207,6 +208,14 @@
         $date-font-size:1.1rem;
         .timeline ul li div .title {
             font-size: $date-font-size;
+        }
+        .timeline ul li .work .title {
+            text-shadow: none;
+            color: $main-color;
+        }
+        .timeline ul li .work .date {
+            text-shadow: none;
+            color: $main-color;
         }
         .timeline ul li div .date {
             font-size: $date-font-size;
@@ -222,6 +231,22 @@
         }
         .timeline ul li .study {
             transform: translate3d(50px, 0, 0);
+        }
+        .timeline .top-work {
+            width: 100vw;
+            margin-left: 0;
+            right: 0;
+            height: auto;
+            color: $third-color;
+            font-size: 2rem;
+        }
+        .timeline .top-study {
+            width: 100vw;
+            margin-left: 0;
+            height: auto;
+            right: 0;
+            color: $second-color;
+            font-size: 2rem;
         }
         //  –––––––––––––––––––EFFECTS––––––––––––––––––––––––––––––– 
     }
