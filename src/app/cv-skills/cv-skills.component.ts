@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cv-skills.component.scss']
 })
 export class CvSkillsComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {

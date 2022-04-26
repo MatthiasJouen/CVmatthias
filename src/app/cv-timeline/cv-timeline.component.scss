@@ -103,7 +103,7 @@
         border-color: transparent transparent transparent $second-color;
     }
     
-    .title {
+    .timeline ul li div .title {
         display: inline-block;
         font-size: $date-font-size;
         font-weight: bold;
@@ -114,7 +114,7 @@
         color: $third-color;
     }
     
-    .date {
+    .timeline ul li div .date {
         display: inline-block;
         font-size: $date-font-size;
         font-weight: bold;
@@ -124,17 +124,17 @@
         margin-top: 2px;
     }
     
-    .date a {
+    .timeline ul li div .date a {
         color: $third-color;
         text-decoration: none;
     }
     
-    .date a:hover {
+    .timeline ul li div .date a:hover {
         color: $main-color;
         font-size: calc($date-font-size + ($date-font-size * 0.5));
     }
     
-    .content {
+    .timeline ul li div .content {
         display: block;
         font-size: 1.0rem;
         font-weight: bold;
@@ -205,16 +205,16 @@
             left: 25px;
         }
         $date-font-size:1.1rem;
-        .title {
+        .timeline ul li div .title {
             font-size: $date-font-size;
         }
-        .date {
+        .timeline ul li div .date {
             font-size: $date-font-size;
         }
-        .date a:hover {
+        .timeline ul li div .date a:hover {
             font-size: calc($date-font-size + ($date-font-size * 0.5));
         }
-        .content {
+        .timeline ul li div .content {
             font-size: 0.8rem;
         }
         .timeline ul li .work {

@@ -2,7 +2,6 @@ $main-color:#051622;
 $second-color :#1BA098;
 $third-color:#DEB992;
 .hobbies {
-    height: 500px;
     background-color: $second-color;
 }
 
@@ -11,17 +10,17 @@ $third-color:#DEB992;
     padding-top: 10px;
 }
 
-h1 {
+.hobbies h1 {
     color: $main-color;
 }
 
-.hero {
+.hobbies .hero {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
 }
 
-.carrousel ul {
+.hobbies .carrousel ul {
     display: flex;
     justify-content: space-between;
     gap: 30px;
@@ -29,7 +28,7 @@ h1 {
     padding: 0;
 }
 
-.hero .carrousel li {
+.hobbies .hero .carrousel li {
     overflow: hidden;
     /* divide by number of images */
     width: calc(100% /3);
@@ -39,7 +38,7 @@ h1 {
     transition: width 1.0s ease;
 }
 
-.hero .carrousel li img {
+.hobbies .hero .carrousel li img {
     width: 100%;
     /* To keep all images on same dimensions */
     object-fit: cover;
@@ -48,16 +47,16 @@ h1 {
     transition: width .6s ease;
 }
 
-.hero .carrousel li:hover {
+.hobbies .hero .carrousel li:hover {
     width: 80%;
     /*   height: 400px; */
 }
 
-.hero .carrousel li:hover video {
+.hobbies .hero .carrousel li:hover video {
     width: 100%;
 }
 
-.hero .carrousel li video {
+.hobbies .hero .carrousel li video {
     width: 100%;
     /* To keep all images on same dimensions */
     object-fit: cover;
@@ -66,13 +65,13 @@ h1 {
     transition: width .6s ease;
 }
 
-.hero .carrousel li:hover video {
+.hobbies .hero .carrousel li:hover video {
     width: 100%;
 }
 
 
 /* Hide Play button + controls on iOS */
 
-video::-webkit-media-controls {
+.hobbies video::-webkit-media-controls {
     display: none !important;
 }
