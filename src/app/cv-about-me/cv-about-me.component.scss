@@ -3,7 +3,6 @@ $second-color :#1BA098;
 $third-color:#DEB992;
 .about-me {
     background-color: $second-color;
-    width: 100%;
 }
 
 
@@ -21,12 +20,14 @@ $third-color:#DEB992;
     position: relative;
     top: 1vh;
     right: -75vw;
+    z-index: 1;
 }
 
 #my-picture {
     width: 100%;
     border-radius: 10px;
     height: auto;
+    box-shadow: 10px 10px 10px $main-color;
 }
 
 
@@ -43,7 +44,12 @@ $third-color:#DEB992;
     width: 100%;
 }
 
+span.my-name {
+    font-weight: 550;
+}
+
 span.job-title {
+    color: $third-color;
     font-weight: 700;
 }
 
@@ -52,6 +58,7 @@ span.job-title {
     font-size: 5vw;
     color: $main-color;
     padding-bottom: 5%;
+    margin-left: 2%;
 }
 
 .text-flip {
@@ -101,13 +108,14 @@ span.job-title {
 
 @media (min-width: 1000px) {
     .text-flip {
-        height: 110px;
+        height: 130px;
     }
 }
 
 @media (max-width: 1000px) {
     .main-title-about-me {
         text-align: center;
+        margin-left: 0%;
     }
     .text-flip {
         position: relative;
@@ -116,7 +124,7 @@ span.job-title {
     .about-me .picture-of-me {
         width: 30vw;
         position: relative;
-        height: 60vw;
+        height: 50vw;
         right: auto;
         margin: 0 auto;
     }
@@ -262,29 +270,29 @@ span.job-title {
 
 @media (min-width: 394px) {
     .flip::after {
-        width: 23px;
-        height: 23px;
+        width: 22px;
+        height: 22px;
     }
 }
 
 @media (min-width: 394px) {
     .flip::after {
-        width: 28px;
-        height: 28px;
+        width: 25px;
+        height: 25px;
     }
 }
 
 @media (min-width: 675px) {
     .flip::after {
-        width: 34px;
-        height: 34px;
+        width: 32px;
+        height: 32px;
     }
 }
 
 @media (min-width: 859px) {
     .flip::after {
-        width: 37px;
-        height: 37px;
+        width: 35px;
+        height: 35px;
     }
 }
 
@@ -297,8 +305,8 @@ span.job-title {
 
 @media (min-width: 1100px) {
     .flip::after {
-        width: 48px;
-        height: 48px;
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -355,7 +363,7 @@ span.job-title {
 .transition-about-me-timeline,
 .transition-about-me-timeline:after {
     height: 25px;
-    width: 100vw;
+    width: 105vw;
 }
 
 @media (min-width: 520px) {
@@ -368,7 +376,7 @@ span.job-title {
 @media (min-width: 900px) {
     .transition-about-me-timeline,
     .transition-about-me-timeline:after {
-        height: 160px;
+        height: 130px;
     }
 }
 

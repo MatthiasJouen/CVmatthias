@@ -35,10 +35,6 @@ h1 {
     position: absolute;
 }
 
-section {
-    width: 100%!important;
-}
-
 //back to top
 .back-to-top {
     position: fixed;
@@ -66,7 +62,7 @@ section {
     background-size: +1.2rem +1.2rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .back-to-top {
         visibility: hidden;
     }
