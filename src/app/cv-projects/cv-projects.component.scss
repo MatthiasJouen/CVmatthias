@@ -2,8 +2,139 @@ $main-color:#051622;
 $second-color :#1BA098;
 $third-color:#DEB992;
 .projects {
-    height: 500px;
     background-color: $main-color;
+}
+
+
+/*
+* -------------------------------------------------------------------------------------------------------------
+* ---------------------------------------------- GRID PROJECTS ------------------------------------------------
+* -------------------------------------------------------------------------------------------------------------
+*/
+
+.projects .grid-projects {
+    margin: 0 auto;
+    width: 90vw;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.projects div {
+    gap: 10px 0px;
+}
+
+
+/* *************** Bloc des textes *******************/
+
+.projects .grid-left:nth-child(4n+1) {
+    grid-column: span 6;
+    background-color: blue;
+}
+
+.projects .grid-right:nth-child(4n+4) {
+    grid-column: span 6;
+    background-color: gray;
+}
+
+
+/* *************** Bloc des images *******************/
+
+.projects .grid-right:nth-child(4n+2) {
+    grid-column: span 6;
+    background-color: green;
+}
+
+.projects .grid-left:nth-child(4n+3) {
+    grid-column: span 6;
+    background-color: rebeccapurple;
+}
+
+.project-image img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .projects .grid-left {
+        grid-column: span 12!important;
+    }
+    .projects .grid-right {
+        grid-column: span 12!important;
+        //mettre un espace sous chaque projet en mode mobile
+        margin-bottom: 5%;
+    }
+}
+
+.projects .project-title {
+    font-size: 2em;
+}
+
+
+/*
+* -------------------------------------------------------------------------------------------------------------
+* --------------------------------------------- MODALE PROJECTS -----------------------------------------------
+* -------------------------------------------------------------------------------------------------------------
+*/
+
+.custom-btn {
+    width: 130px;
+    height: 40px;
+    color: $main-color;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .1), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+}
+
+.btn-5 {
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: $third-color;
+    background: linear-gradient(0deg, $third-color 0%, $third-color 100%);
+}
+
+.btn-5:hover {
+    color: $third-color;
+    background: transparent;
+    box-shadow: none;
+}
+
+.btn-5:before,
+.btn-5:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: $third-color;
+    box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003, 4px 4px 5px 0px #0002;
+    transition: 400ms ease all;
+}
+
+.btn-5:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.btn-5:hover:before,
+.btn-5:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
 }
 
 
@@ -16,7 +147,7 @@ $third-color:#DEB992;
 .transition-projects-hobbies,
 .transition-projects-hobbies:after {
     height: 35px;
-    width: 100%;
+    width: 100vw;
 }
 
 @media (min-width: 520px) {
