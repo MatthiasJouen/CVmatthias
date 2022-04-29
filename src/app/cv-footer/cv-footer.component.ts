@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faGithub, faInstagram, faYoutube, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-cv-footer',
@@ -6,13 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cv-footer.component.scss']
 })
 export class CvFooterComponent implements OnInit {
-
+  faGithub = faGithub;
+  faInstagram = faInstagram;
+  faYoutube = faYoutube;
+  faLinkedin = faLinkedin;
 
   constructor() { }
 
   ngOnInit(): void {
     $(document).ready(function(){
-      $('#js-copyright-years').text('2022-' + (new Date()).getFullYear());
+      $('.current-year').text("- "+new Date().getFullYear());
       });
   }
 }
