@@ -3,6 +3,10 @@ $second-color :#1BA098;
 $third-color:#DEB992;
 .projects {
     background-color: $main-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -12,129 +16,211 @@ $third-color:#DEB992;
 * -------------------------------------------------------------------------------------------------------------
 */
 
-.projects .grid-projects {
+
+/************************ ZONE DES BLOCS PROJET ***********************/
+
+.all-projects {
     margin: 0 auto;
-    width: 90vw;
-    display: grid;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.button-project {
     text-align: center;
-    grid-template-columns: repeat(12, 1fr);
 }
 
-.projects div {
-    gap: 10px 0px;
+#projects .item {
+    display: flex;
+    //centrer en vertical
+    align-items: center;
+    justify-content: center;
+    max-width: 950px;
+    //centrer l'item
+    margin: 0 auto;
+    margin-bottom: 7rem;
+}
+
+#projects .item:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+#projects .item .left {
+    flex: 1;
+}
+
+#projects .item .right {
+    margin-left: -150px;
+    flex: 1;
+    //couleur de fond de zone texte
+    background-color: $third-color;
+    opacity: 0.9;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    //legere ombre derriere
+    box-shadow: 0px 0px 10px $second-color;
+    z-index: 2;
+}
+
+#projects .item:nth-of-type(even) .right {
+    margin-left: 0;
+}
+
+#projects .item:nth-of-type(even) .left {
+    margin-left: -150px;
 }
 
 
-/* *************** Bloc des textes *******************/
+/* ----------------IMAGE-------------- */
 
-.projects .grid-left:nth-child(4n+1) {
-    grid-column: span 6;
-    background-color: blue;
+#projects .item .left .img {
+    height: 580px;
+    overflow: hidden;
+    border-radius: 12px;
+    //legere ombre derriere
+    box-shadow: 0px 0px 10px $second-color;
+    position: relative;
 }
 
-.projects .grid-right:nth-child(4n+4) {
-    grid-column: span 6;
-    background-color: gray;
-}
-
-
-/* *************** Bloc des images *******************/
-
-.projects .grid-right:nth-child(4n+2) {
-    grid-column: span 6;
-    background-color: green;
-}
-
-.projects .grid-left:nth-child(4n+3) {
-    grid-column: span 6;
-    background-color: rebeccapurple;
-}
-
-.project-image img {
+.item div .img img {
     width: 100%;
-    max-width: 200px;
-    height: auto;
+    height: 100%;
 }
 
-@media (max-width: 768px) {
-    .projects .grid-left {
-        grid-column: span 12!important;
+#projects .item .left .img::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    //comme un filtre sur l'image
+    background-color: #3893aa38;
+}
+
+#projects .item .left .img img {
+    object-fit: cover;
+    transition: 0.3s ease transform;
+}
+
+#projects .item .left .img:hover img {
+    //grossi l'image au passage hover de l'item
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+
+/*----------------TEXTE---------------*/
+
+#projects .item .right .project-title {
+    //titre de la zone texte
+    color: $main-color;
+    font-size: 25px;
+}
+
+#projects .item .right .project-sub {
+    //sous-titre de la zone texte
+    color: $main-color;
+    font-size: 15px;
+    margin-bottom: 2rem;
+}
+
+#projects .item .right .project-content {
+    //contenu de la zone texte
+    color: $main-color;
+    font-size: 15px;
+    margin-bottom: 1rem;
+}
+
+
+/**********************************************************************/
+
+
+/****************** ZONE MEDIA QUERY SMARTPHONE ***********************/
+
+
+/**********************************************************************/
+
+@media only screen and (max-width: 768px) {
+    .all-projects {
+        width: 100%;
     }
-    .projects .grid-right {
-        grid-column: span 12!important;
-        //mettre un espace sous chaque projet en mode mobile
-        margin-bottom: 5%;
+    #projects .item {
+        flex-direction: column;
+        margin-bottom: 5rem;
+    }
+    #projects .item .left {
+        width: 90%;
+    }
+    #projects .item .right {
+        margin-left: 0;
+        width: 70%;
+        padding: 1rem 2rem;
+        margin-top: -150px;
+    }
+    #projects .item:nth-of-type(even) {
+        flex-direction: column;
+    }
+    #projects .item:nth-of-type(even) .left {
+        margin-left: 0;
+    }
+    #projects .item .left .img {
+        height: 400px;
     }
 }
 
-.projects .project-title {
-    font-size: 2em;
-}
+
+/**********************************************************************/
 
 
-/*
-* -------------------------------------------------------------------------------------------------------------
-* --------------------------------------------- MODALE PROJECTS -----------------------------------------------
-* -------------------------------------------------------------------------------------------------------------
-*/
+/********************* BOUTON DANS ZONE TEXTE *************************/
+
+
+/**********************************************************************/
 
 .custom-btn {
-    width: 130px;
+    width: 150px;
     height: 40px;
     color: $main-color;
     border-radius: 5px;
-    padding: 10px 25px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     background: transparent;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     position: relative;
-    display: inline-block;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .1), 4px 4px 5px 0px rgba(0, 0, 0, .1);
-    outline: none;
 }
 
-.btn-5 {
-    width: 130px;
-    height: 40px;
-    line-height: 42px;
-    padding: 0;
+.btn-modal {
+    background: $second-color;
     border: none;
-    background: $third-color;
-    background: linear-gradient(0deg, $third-color 0%, $third-color 100%);
+    z-index: 1;
 }
 
-.btn-5:hover {
-    color: $third-color;
-    background: transparent;
-    box-shadow: none;
-}
-
-.btn-5:before,
-.btn-5:after {
-    content: '';
+.btn-modal:after {
     position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
     top: 0;
     right: 0;
-    height: 2px;
-    width: 0;
-    background: $third-color;
-    box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003, 4px 4px 5px 0px #0002;
-    transition: 400ms ease all;
+    z-index: -1;
+    //couleur de fond après l'anim
+    background-color: $main-color;
+    border-radius: 5px;
+    transition: all 0.5s ease;
 }
 
-.btn-5:after {
-    right: inherit;
-    top: inherit;
+.btn-modal:hover {
+    //couleur du texte au hover
+    color: #fff;
+}
+
+.btn-modal:hover:after {
     left: 0;
-    bottom: 0;
+    width: 100%;
 }
 
-.btn-5:hover:before,
-.btn-5:hover:after {
-    width: 100%;
-    transition: 800ms ease all;
+.btn-modal:active {
+    top: 2px;
 }
 
 

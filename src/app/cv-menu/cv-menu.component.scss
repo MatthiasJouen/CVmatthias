@@ -3,11 +3,10 @@ $second-color :#1BA098;
 $third-color:#DEB992;
 #mainNav {
     top: 0;
-    margin-left: 0;
 }
 
 .navigation {
-    z-index: 1;
+    z-index: 3;
     position: fixed;
     background-color: $second-color;
     color: $third-color;
@@ -56,6 +55,7 @@ $third-color:#DEB992;
     }
     #mainNav {
         text-align: center;
+        //margin: 0 -15px;
     }
     .navigation a+a {
         margin-left: 5vw;
