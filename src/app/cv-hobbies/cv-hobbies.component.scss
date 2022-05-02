@@ -18,7 +18,7 @@ $third-color:#DEB992;
 
 .hobbies .hero {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0 auto;
     padding-bottom: 3vh;
 }
@@ -36,7 +36,7 @@ $third-color:#DEB992;
     /* divide by number of images */
     width: calc(100% /3);
     border-radius: 30px;
-    height: 400px;
+    height: 450px;
     /* time to set the rectangle on size */
     transition: width 1.0s ease;
 }
@@ -98,7 +98,7 @@ $third-color:#DEB992;
     .hobbies .carrousel ul li {
         margin: 0 auto;
         width: 100% !important;
-        height: 25vh !important;
+        height: 50vh !important;
     }
     .hobbies video::-webkit-media-controls {
         //on réaffiche le bouton play

@@ -20,6 +20,7 @@ export class CvHobbiesComponent implements OnInit {
     
     function playVid(videoToPlay:HTMLVideoElement) {
       //videoToPlay.muted = true;
+      videoToPlay.volume = 0.1;
       videoToPlay.play();
     }
     function pauseVid(videoToPause:HTMLVideoElement) {
