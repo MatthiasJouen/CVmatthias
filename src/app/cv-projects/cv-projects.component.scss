@@ -1,0 +1,300 @@
+$main-color:#051622;
+$second-color :#1BA098;
+$third-color:#DEB992;
+.projects {
+    background-color: $main-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*
+* -------------------------------------------------------------------------------------------------------------
+* ---------------------------------------------- GRID PROJECTS ------------------------------------------------
+* -------------------------------------------------------------------------------------------------------------
+*/
+
+
+/************************ ZONE DES BLOCS PROJET ***********************/
+
+.all-projects {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.button-project {
+    text-align: center;
+}
+
+#projects .item {
+    display: flex;
+    //centrer en vertical
+    align-items: center;
+    justify-content: center;
+    max-width: 950px;
+    //centrer l'item
+    margin: 0 auto;
+    margin-bottom: 7rem;
+}
+
+#projects .item:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+#projects .item .left {
+    flex: 1;
+}
+
+#projects .item .right {
+    margin-left: -150px;
+    flex: 1;
+    //couleur de fond de zone texte
+    background-color: $third-color;
+    opacity: 0.9;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    //legere ombre derriere
+    box-shadow: 0px 0px 10px $second-color;
+    z-index: 2;
+}
+
+#projects .item:nth-of-type(even) .right {
+    margin-left: 0;
+}
+
+#projects .item:nth-of-type(even) .left {
+    margin-left: -150px;
+}
+
+
+/* ----------------IMAGE-------------- */
+
+#projects .item .left .img {
+    height: 580px;
+    overflow: hidden;
+    border-radius: 12px;
+    //legere ombre derriere
+    box-shadow: 0px 0px 10px $second-color;
+    position: relative;
+}
+
+.item div .img img {
+    width: 100%;
+    height: 100%;
+}
+
+#projects .item .left .img::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    //comme un filtre sur l'image
+    background-color: #3893aa38;
+}
+
+#projects .item .left .img img {
+    object-fit: cover;
+    transition: 0.3s ease transform;
+}
+
+#projects .item .left .img:hover img {
+    //grossi l'image au passage hover de l'item
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+
+/*----------------TEXTE---------------*/
+
+#projects .item .right .project-title {
+    //titre de la zone texte
+    color: $main-color;
+    font-size: 25px;
+}
+
+#projects .item .right .project-sub {
+    //sous-titre de la zone texte
+    color: $main-color;
+    font-size: 15px;
+    margin-bottom: 2rem;
+}
+
+#projects .item .right .project-content {
+    //contenu de la zone texte
+    color: $main-color;
+    font-size: 15px;
+    margin-bottom: 1rem;
+}
+
+
+/**********************************************************************/
+
+
+/****************** ZONE MEDIA QUERY SMARTPHONE ***********************/
+
+
+/**********************************************************************/
+
+@media only screen and (max-width: 768px) {
+    .all-projects {
+        width: 100%;
+    }
+    #projects .item {
+        flex-direction: column;
+        margin-bottom: 5rem;
+    }
+    #projects .item .left {
+        width: 90%;
+    }
+    #projects .item .right {
+        margin-left: 0;
+        width: 70%;
+        padding: 1rem 2rem;
+        margin-top: -150px;
+    }
+    #projects .item:nth-of-type(even) {
+        flex-direction: column;
+    }
+    #projects .item:nth-of-type(even) .left {
+        margin-left: 0;
+    }
+    #projects .item .left .img {
+        height: 400px;
+    }
+}
+
+
+/* -------------------------------------------------------------------------------------------------------------
+* ---------------------------------------- BUTTON FOR MODAL IN TEXT ZONE ---------------------------------------
+* --------------------------------------------------------------------------------------------------------------
+*/
+
+.custom-btn {
+    width: 150px;
+    height: 40px;
+    color: $main-color;
+    border-radius: 5px;
+    font-weight: 600;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.btn-modal {
+    background: $second-color;
+    border: none;
+    z-index: 1;
+}
+
+.btn-modal:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    //couleur de fond après l'anim
+    background-color: $main-color;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+.btn-modal:hover {
+    //couleur du texte au hover
+    color: #fff;
+}
+
+.btn-modal:hover:after {
+    left: 0;
+    width: 100%;
+}
+
+.btn-modal:active {
+    top: 2px;
+}
+
+
+/* -------------------------------------------------------------------------------------------------------------
+* ---------------------------------------------- MODALE VIDEO --------------------------------------------------
+* --------------------------------------------------------------------------------------------------------------
+*/
+
+.video-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .9);
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.video-modal video {
+    max-width: 1000px;
+    outline: none;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
+    font-size: 42px;
+    cursor: pointer;
+}
+
+@media (max-width: 901px) {
+    .video-modal video {
+        max-width: 90%;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------- 
+* -------------------------------------- TRANSITION PROJECTS HOBBIES ------------------------------------------ 
+* -------------------------------------------------------------------------------------------------------------
+*/
+
+.transition-projects-hobbies,
+.transition-projects-hobbies:after {
+    height: 35px;
+    width: 100vw;
+}
+
+@media (min-width: 520px) {
+    .transition-projects-hobbies,
+    .transition-projects-hobbies:after {
+        height: 55px;
+    }
+}
+
+@media (min-width: 900px) {
+    .transition-projects-hobbies,
+    .transition-projects-hobbies:after {
+        height: 75px;
+    }
+}
+
+.transition-projects-hobbies {
+    background-color: $second-color;
+}
+
+.transition-projects-hobbies:after {
+    background-color: $main-color;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 77% 100%, 12% 42%, 0 60%);
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 77% 100%, 12% 42%, 0 60%);
+}

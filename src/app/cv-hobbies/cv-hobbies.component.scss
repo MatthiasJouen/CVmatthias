@@ -1,0 +1,107 @@
+$main-color:#051622;
+$second-color :#1BA098;
+$third-color:#DEB992;
+.hobbies {
+    background-color: $second-color;
+}
+
+
+/*
+* -------------------------------------------------------------------------------------------------------------
+* -------------------------------------- TITRE DE LA SECTION --------------------------------------------------
+* -------------------------------------------------------------------------------------------------------------
+*/
+
+.hobbies h1 {
+    color: $main-color;
+}
+
+.hobbies .hero {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 3vh;
+}
+
+.hobbies .carrousel ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 20px 10px;
+    padding: 0;
+}
+
+.hobbies .hero .carrousel li {
+    overflow: hidden;
+    /* divide by number of images */
+    width: calc(100% /3);
+    border-radius: 30px;
+    height: 450px;
+    /* time to set the rectangle on size */
+    transition: width 1.0s ease;
+}
+
+.hobbies .hero .carrousel li img {
+    width: 100%;
+    /* To keep all images on same dimensions */
+    object-fit: cover;
+    height: 100%;
+    /* time to fit the image on the rectangle */
+    transition: width .6s ease;
+}
+
+.hobbies .hero .carrousel li:hover {
+    width: 80%;
+    /*   height: 400px; */
+}
+
+.hobbies .hero .carrousel li:hover video {
+    width: 100%;
+}
+
+.hobbies .hero .carrousel li video {
+    width: 100%;
+    /* To keep all images on same dimensions */
+    object-fit: cover;
+    height: 100%;
+    /* time to fit the image on the rectangle */
+    transition: width .6s ease;
+}
+
+.hobbies .hero .carrousel li:hover video {
+    width: 100%;
+}
+
+
+/* Hide Play button + controls on iOS */
+
+.hobbies video::-webkit-media-controls {
+    display: none !important;
+}
+
+
+/*
+* -------------------------------------------------------------------------------------------------------------
+* -------------------------------------- VERSION MOBILE HOBBIES -----------------------------------------------
+* -------------------------------------------------------------------------------------------------------------
+*/
+
+@media (max-width: 1000px) {
+    .hobbies .carrousel ul {
+        display: flex;
+        flex-direction: column;
+        margin: 0 3vw;
+    }
+    .hobbies .carrousel {
+        margin: 0 auto;
+    }
+    .hobbies .carrousel ul li {
+        margin: 0 auto;
+        width: 100% !important;
+        height: 50vh !important;
+    }
+    .hobbies video::-webkit-media-controls {
+        //on réaffiche le bouton play
+        display: flex !important;
+    }
+}

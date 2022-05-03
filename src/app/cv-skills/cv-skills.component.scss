@@ -1,0 +1,124 @@
+    $main-color:#051622;
+    $second-color :#1BA098;
+    $third-color:#DEB992;
+    .skills {
+        background-color: $second-color;
+    }
+    
+    .skills h1 {
+        color: $main-color;
+    }
+    /*
+* -------------------------------------------------------------------------------------------------------------
+* ----------------------------------------- SKILLS ICONS STYLE ------------------------------------------------
+* -------------------------------------------------------------------------------------------------------------
+*/
+    
+    .skills .skillArea {
+        //zone globale pour les compétences
+        max-width: 1280px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .skills .skillArea .skillIcons {
+        //conteneur des icones
+        text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 0 auto;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        width: 80%;
+    }
+    
+    .skills .skillArea .skillIcons .box-icon {
+        //une ligne d'icone
+        width: 50%;
+        margin-bottom: 10px;
+        height: 142px;
+    }
+    
+    .skills .skillArea .skillIcons i {
+        //correspond à la classe i
+        font-family: devicon;
+        font-style: normal;
+        font-weight: 500;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        color: $third-color;
+        font-size: 4.5rem;
+        transition: all 0.6s ease-in-out;
+    }
+    
+    .skills .skillArea .skillIcons i:hover {
+        color: $main-color;
+    }
+    
+    .skills .skillArea .skillIcons .box-icon p:first-of-type {
+        margin-bottom: 50px;
+    }
+    
+    .skills .skillArea .skillIcons .box-icon p {
+        //correspond à la classe p
+        line-height: 1.55;
+        color: $main-color;
+        font-size: 1.2rem;
+        text-align: center;
+        width: fit-content;
+        margin: 10px auto;
+    }
+    
+    @media (min-width: 600px) {
+        .skills .skillArea .skillIcons .box-icon {
+            width: 25%;
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        .skills .skillArea .skillIcons .box-icon {
+            width: 12.5%;
+        }
+    }
+    /*
+* -------------------------------------------------------------------------------------------------------------
+* -------------------------------------- TRANSITION SKILLS PROJECTS -------------------------------------------
+* -------------------------------------------------------------------------------------------------------------
+*/
+    
+    .transition-skills-projects,
+    .transition-skills-projects:after {
+        height: 25px;
+        width: 100vw;
+    }
+    
+    @media (min-width: 520px) {
+        .transition-skills-projects,
+        .transition-skills-projects:after {
+            height: 55px;
+        }
+    }
+    
+    @media (min-width: 900px) {
+        .transition-skills-projects,
+        .transition-skills-projects:after {
+            height: 75px;
+        }
+    }
+    
+    .transition-skills-projects {
+        background-color: $main-color;
+    }
+    
+    .transition-skills-projects:after {
+        background-color: $second-color;
+        -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 0 100%);
+    }
