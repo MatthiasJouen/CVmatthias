@@ -27,9 +27,9 @@
                         "tsConfig": "tsconfig.app.json",
                         "inlineStyleLanguage": "scss",
                         "assets": [
-                            "src/assets/icons/.*",
-                            "src/assets/images/.*",
-                            "src/assets/videos/.*"
+                            "src/assets/icons/",
+                            "src/assets/images/",
+                            "src/assets/videos/"
                         ],
                         "styles": [
                             "src/styles.scss"
