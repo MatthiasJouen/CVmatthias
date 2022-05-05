@@ -110,7 +110,6 @@
         display: inline-block;
         font-size: $date-font-size;
         font-weight: bold;
-        text-shadow: $main-color 2px 2px 0px;
         letter-spacing: .1rem;
         margin: -5px;
         margin-right: 5px;
@@ -121,8 +120,7 @@
         display: inline-block;
         font-size: $date-font-size;
         font-weight: bold;
-        letter-spacing: .2rem;
-        text-shadow: $main-color 2px 2px 0px;
+        letter-spacing: .1rem;
         color: $third-color;
         margin-top: 2px;
     }
@@ -238,7 +236,7 @@
         }
         .timeline .top-work {
             width: calc(75vw + 75px);
-            margin-left: 0;
+            margin: 0 auto;
             right: 0;
             height: auto;
             color: $third-color;
@@ -246,7 +244,7 @@
         }
         .timeline .top-study {
             width: calc(75vw + 75px);
-            margin-left: 0;
+            margin: 0 auto;
             height: auto;
             right: 0;
             color: $second-color;
