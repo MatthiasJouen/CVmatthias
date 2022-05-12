@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -6,8 +6,19 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'CVmatthias';
+  
+  ngOnInit(): void {
+
+    //Gestion d'une clé localStorage pour stocker les données de l'utilisateur
+    const localStorageTest = 'LocalStorageTest';
+    if(localStorage.getItem('LocalStorageTest') === null) {
+      localStorage.setItem(localStorageTest, 'neverClicktoTop');
+    }
+
+  }
+  
 }
 
 
