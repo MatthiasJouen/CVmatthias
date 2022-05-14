@@ -1,24 +1,32 @@
 <section id="hobbies" class="page-section hobbies">
-    <h1 class="section-title">Mes hobbys</h1>
+    <h2 class="section-title">Mes hobbys</h2>
     <div class="hero">
         <div class="carrousel">
             <!-- LIST OF IMAGES  -->
             <ul>
                 <li class="cards">
-                    <video class="hobbiesVideo" controls id="video" loop playsinline>
-                        <source src="\assets\videos\Hobbies1.mp4" type="video/mp4">
+                    <video class="hobbiesVideo" controls id="video" loop playsinline preload="metadata">
+                        <source src="\assets\videos\dronevideo.mp4" type="video/mp4" alt="video de drone fpv montagne">
                         Your browser does not support HTML video.
                     </video>
                 </li>
                 <li class="cards">
-                    <img src="\assets\images\Hobbies2.jpg">
+                    <picture>
+                        <source srcset="\assets\images\football.webp" type="image/webp">
+                        <source srcset="\assets\images\football.jpg" type="image/jpeg">
+                        <img src="\assets\images\football.jpg" loading="lazy" alt="joueur de football">
+                    </picture>
                 </li>
                 <li class="cards">
-                    <img src="\assets\images\Hobbies1.jpg">
+                    <picture>
+                        <source srcset="\assets\images\drone.webp" type="image/webp">
+                        <source srcset="\assets\images\drone.jpg" type="image/jpeg">
+                        <img src="\assets\images\drone.jpg" loading="lazy" alt="drone fpv">
+                    </picture>
                 </li>
                 <li class="cards">
-                    <video class="hobbiesVideo" controls id="video2" loop playsinline>
-                        <source src="\assets\videos\Hobbies2.MOV" type="video/mp4 ">
+                    <video class="hobbiesVideo" controls id="video2" loop playsinline preload="metadata">
+                        <source src="\assets\videos\randonnee.MOV" type="video/mp4 " alt="randonnee en montagne">
                         Your browser does not support HTML video.
                     </video>
                 </li>
