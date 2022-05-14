@@ -12,12 +12,6 @@ platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
   
 
-//Gestion d'une clé localStorage pour stocker les données de l'utilisateur
-const colorKey = 'preferedColor';
-if(localStorage.getItem('preferedColor') === null) {
-  localStorage.setItem(colorKey, 'red');
-}
-
 //function pour retourner au top de la page
 $(window).scroll(function(){
   var scrollDistance:any = $(this).scrollTop();
@@ -29,6 +23,7 @@ $(window).scroll(function(){
 });
 
 $('.back-to-top').click(function(){
+  localStorage.setItem('LocalStorageTest', 'alreadyClicktoTop');
   $("html, body").animate({ 
     scrollTop: 0 
   }, 600);
